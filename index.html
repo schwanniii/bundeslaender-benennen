@@ -8,39 +8,40 @@
     <link rel="stylesheet" href="bundesländerBenennen.css">
 </head>
 <body>
-    <section>
-        <p id="frage"></p>
+    <div class="container">
+        <section>
+            <p id="frage"></p>
 
-        <div id="div_bild">
-            <img src="https://github.com/battlerager666/bundeslaender-benennen/blob/main/deutschlandkarte.png?raw=true" id="bildDE">
+            <div id="div_bild">
+                <img src="https://github.com/battlerager666/bundeslaender-benennen/blob/main/deutschlandkarte.png?raw=true" id="bildDE">
 
-            <div id="button_div">
-                <button class="button_bundesland" id="Schleswig-Holstein" onclick="AnswerGiven('Schleswig-Holstein')">Schleswig-Holstein</button>
-                <button class="button_bundesland" id="Mecklenburg-Vorpommern" onclick="AnswerGiven('Mecklenburg-Vorpommern')">Mecklenburg-Vorpommern</button>
-                <button class="button_bundesland" id="Hamburg" onclick="AnswerGiven('Hamburg')">Hamburg</button>
-                <button class="button_bundesland" id="Niedersachsen" onclick="AnswerGiven('Niedersachsen')">Niedersachsen</button>
-                <button class="button_bundesland" id="Bremen" onclick="AnswerGiven('Bremen')">Bremen</button>
-                <button class="button_bundesland" id="Thüringen" onclick="AnswerGiven('Thüringen')">Thüringen</button>
-                <button class="button_bundesland" id="Sachsen" onclick="AnswerGiven('Sachsen')">Sachsen</button>
-                <button class="button_bundesland" id="Sachsen-Anhalt" onclick="AnswerGiven('Sachsen-Anhalt')">Sachsen-Anhalt</button>
-                <button class="button_bundesland" id="Brandenburg" onclick="AnswerGiven('Brandenburg')">Brandenburg</button>
-                <button class="button_bundesland" id="Berlin" onclick="AnswerGiven('Berlin')">Berlin</button>
-                <button class="button_bundesland" id="Nordrhein-Westfalen" onclick="AnswerGiven('Nordrhein-Westfalen')">Nordrhein-Westfalen</button>
-                <button class="button_bundesland" id="Hessen" onclick="AnswerGiven('Hessen')">Hessen</button>
-                <button class="button_bundesland" id="Rheinland-Pfalz" onclick="AnswerGiven('Rheinland-Pfalz')">Rheinland-Pfalz</button>
-                <button class="button_bundesland" id="Saarland" onclick="AnswerGiven('Saarland')">Saarland</button>
-                <button class="button_bundesland" id="Baden-Württemberg" onclick="AnswerGiven('Baden-Württemberg')">Baden-Württemberg</button>
-                <button class="button_bundesland" id="Bayern" onclick="AnswerGiven('Bayern')">Bayern</button>
+                <div id="button_div">
+                    <button class="button_bundesland" id="Schleswig-Holstein" onclick="AnswerGiven('Schleswig-Holstein')">Schleswig-Holstein</button>
+                    <button class="button_bundesland" id="Mecklenburg-Vorpommern" onclick="AnswerGiven('Mecklenburg-Vorpommern')">Mecklenburg-Vorpommern</button>
+                    <button class="button_bundesland" id="Hamburg" onclick="AnswerGiven('Hamburg')">Hamburg</button>
+                    <button class="button_bundesland" id="Niedersachsen" onclick="AnswerGiven('Niedersachsen')">Niedersachsen</button>
+                    <button class="button_bundesland" id="Bremen" onclick="AnswerGiven('Bremen')">Bremen</button>
+                    <button class="button_bundesland" id="Thüringen" onclick="AnswerGiven('Thüringen')">Thüringen</button>
+                    <button class="button_bundesland" id="Sachsen" onclick="AnswerGiven('Sachsen')">Sachsen</button>
+                    <button class="button_bundesland" id="Sachsen-Anhalt" onclick="AnswerGiven('Sachsen-Anhalt')">Sachsen-Anhalt</button>
+                    <button class="button_bundesland" id="Brandenburg" onclick="AnswerGiven('Brandenburg')">Brandenburg</button>
+                    <button class="button_bundesland" id="Berlin" onclick="AnswerGiven('Berlin')">Berlin</button>
+                    <button class="button_bundesland" id="Nordrhein-Westfalen" onclick="AnswerGiven('Nordrhein-Westfalen')">Nordrhein-Westfalen</button>
+                    <button class="button_bundesland" id="Hessen" onclick="AnswerGiven('Hessen')">Hessen</button>
+                    <button class="button_bundesland" id="Rheinland-Pfalz" onclick="AnswerGiven('Rheinland-Pfalz')">Rheinland-Pfalz</button>
+                    <button class="button_bundesland" id="Saarland" onclick="AnswerGiven('Saarland')">Saarland</button>
+                    <button class="button_bundesland" id="Baden-Württemberg" onclick="AnswerGiven('Baden-Württemberg')">Baden-Württemberg</button>
+                    <button class="button_bundesland" id="Bayern" onclick="AnswerGiven('Bayern')">Bayern</button>
+                </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <button onclick="neueRunde()" id="spielStarten_button">nächste Frage</button>
+        </section>
+        <section id="section_Knöpfe">
+            <button onclick="neueRunde()" id="spielStarten_button">nächste Frage</button>
 
-        <button id="btn_hilfeUmschalten">Hilfe</button>
-        <button id="btn_lösungAnzeigenUmschalten">Lösung</button>
-    </section>
-
+            <button id="btn_hilfeUmschalten">Hilfe</button>
+            <button id="btn_lösungAnzeigenUmschalten">Lösung</button>
+        </section>
+    </div>
 
 
     <script src="index.js"></script>

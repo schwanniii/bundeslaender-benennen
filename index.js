@@ -24,7 +24,7 @@ function AnswerGiven(Answer) {
         console.log("richtig");
         changeBackground("rgb(130, 201, 130)"); //grün
         setTimeout(() => {
-            changeBackground("rgb(231, 196, 150)"); //normalfarbe hintergrund
+            changeBackground("var(--main_color_bg)"); //normalfarbe hintergrund
           }, 500);
 
         neueRunde();
@@ -32,7 +32,7 @@ function AnswerGiven(Answer) {
         console.log("falsch");
         changeBackground("rgb(224, 114, 114)"); //rot
         setTimeout(() => {
-            changeBackground("rgb(231, 196, 150)"); //normalfarbe hintergrund
+            changeBackground("var(--main_color_bg)"); //normalfarbe hintergrund
           }, 500);
     }
 }

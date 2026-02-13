@@ -11,44 +11,72 @@
 }
 
 body {
-    margin: 0;
     background-color: var(--main_color_bg);
     color: var(--main_color);
     font-family: fantasy;
     overflow: scroll;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Stapelt die Elemente untereinander */
+  align-items: center;    /* Zentriert die Elemente horizontal */
+  justify-content: center; /* Zentriert die Elemente vertikal (falls der Container hoch genug ist) */
+  min-height: 100vh;      /* Nutzt mindestens die volle Bildschirmhöhe */
+  gap: 20px;              /* Erzeugt einen sauberen Abstand zwischen den Sections */
+  padding: 5%;           /* Sorgt dafür, dass am Rand nichts klebt */
+}
   
 section {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 80vh;
+    width: 100vw;
+}
+
+section {
+  width: 90%;             /* Nutzt den Platz dynamisch aus */
+  max-width: 800px;       /* Verhindert, dass es auf riesigen Bildschirmen zu breit wird */
+  padding: 20px;
 }
 
 #frage {
-    font-size: 70px;
-    margin: 0.5rem;
+    font-size: 60px;
+    margin: 2rem 2rem 2rem 30rem;
+    object-fit: contain;
 }
 
 #div_bild {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    margin: 0 0 0 20rem;
+    width: 95%;
+    height: 100%;
 }
 
 #bildDE {
     width: 900px;
     height: 800px;
     object-fit: contain;
+    display: block;
+    overflow: hidden;
+    margin: 0 -300px 0 -300px;
 }
 
 #button_div {
     display: grid;
     position: absolute;
-    border: 1px solid black;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    margin: 4rem;
+    grid-template-rows: repeat(12, 50px);
+    grid-template-columns: repeat(12, 50px);
     grid-template-areas:
         " . . . . . Schleswig-Holstein . . . . . ."
         " . . . . . . . . Mecklenburg-Vorpommern . . ."
@@ -64,12 +92,23 @@ section {
         " . . . . . . . . . . . .";
 }
 
+
+
 .button_bundesland {
     padding: 0px;
     background-color: rgba(214, 74, 55, 0.4);
     color: rgb(250, 197, 197);
     border-radius: 20px;
 }
+
+/* #section_Knöpfe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid beige;
+    width: 100vw;
+} */
 
 #spielStarten_button {
     bottom: 40px;
