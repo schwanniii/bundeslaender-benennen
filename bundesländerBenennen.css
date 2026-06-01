@@ -1,48 +1,98 @@
-#Schleswig-Holstein{
-    grid-area: Schleswig-Holstein;
+/* Bundesländer Button Positionierung auf der Deutschlandkarte */
+/* Die Positionen sind prozentual zur Kartengröße berechnet */
+
+#Schleswig-Holstein {
+    top: 8%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
-#Mecklenburg-Vorpommern{
-    grid-area: Mecklenburg-Vorpommern;
+
+#Mecklenburg-Vorpommern {
+    top: 18%;
+    left: 70%;
+    transform: translate(-50%, -50%);
 }
-#Hamburg{
-    grid-area: Hamburg;
+
+#Hamburg {
+    top: 20%;
+    left: 45%;
+    transform: translate(-50%, -50%);
 }
-#Niedersachsen{
-    grid-area: Niedersachsen;
+
+#Niedersachsen {
+    top: 35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
 }
-#Bremen{
-    grid-area: Bremen;
+
+#Bremen {
+    top: 28%;
+    left: 30%;
+    transform: translate(-50%, -50%);
 }
-#Thüringen{
-    grid-area: Thüringen;
+
+#Thüringen {
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%, -50%);
 }
-#Sachsen{
-    grid-area: Sachsen;
+
+#Sachsen {
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
 }
-#Sachsen-Anhalt{
-    grid-area: Sachsen-Anhalt;
+
+#Sachsen-Anhalt {
+    top: 42%;
+    left: 65%;
+    transform: translate(-50%, -50%);
 }
-#Brandenburg{
-    grid-area: Brandenburg;
+
+#Brandenburg {
+    top: 35%;
+    left: 75%;
+    transform: translate(-50%, -50%);
 }
-#Berlin{
-    grid-area: Berlin;
+
+#Berlin {
+    top: 38%;
+    left: 80%;
+    transform: translate(-50%, -50%);
 }
-#Nordrhein-Westfalen{
-    grid-area: Nordrhein-Westfalen;
+
+#Nordrhein-Westfalen {
+    top: 45%;
+    left: 25%;
+    transform: translate(-50%, -50%);
 }
-#Hessen{
-    grid-area: Hessen;
+
+#Hessen {
+    top: 52%;
+    left: 45%;
+    transform: translate(-50%, -50%);
 }
-#Rheinland-Pfalz{
-    grid-area: Rheinland-Pfalz;
+
+#Rheinland-Pfalz {
+    top: 58%;
+    left: 32%;
+    transform: translate(-50%, -50%);
 }
-#Saarland{
-    grid-area: Saarland;
+
+#Saarland {
+    top: 65%;
+    left: 20%;
+    transform: translate(-50%, -50%);
 }
-#Baden-Württemberg{
-    grid-area: Baden-Württemberg;
+
+#Baden-Württemberg {
+    top: 70%;
+    left: 35%;
+    transform: translate(-50%, -50%);
 }
-#Bayern{
-    grid-area: Bayern;
+
+#Bayern {
+    top: 68%;
+    left: 62%;
+    transform: translate(-50%, -50%);
 }
