@@ -378,7 +378,7 @@ body {
     html,
     body {
         height: auto;
-        overflow-y: auto;
+        overflow-y: scroll;
     }
 }
 
