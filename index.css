@@ -142,6 +142,7 @@ body {
     height: 100%;
     display: block;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+    pointer-events: none;
 }
 
 /* SVG Bundesländer-Regionen */
@@ -153,6 +154,7 @@ body {
     transition: all 0.2s ease;
     vector-effect: non-scaling-stroke;
     touch-action: manipulation;
+    pointer-events: all !important;
 }
 
 .bundesland-region:hover,
@@ -374,8 +376,8 @@ body {
 
     html,
     body {
-        height: 100vh;
-        overflow: hidden;
+        height: auto;
+        overflow: auto;
     }
 }
 
