@@ -23,7 +23,7 @@ const pathIdMap = {
 
 let zufälligesBundesland;
 let hilfenAngezeigt = false;
-let lösungAngezeigt = false;
+let loesungAngezeigt = false;
 let svgDocument = null;
 
 function getPathId(state) {
@@ -104,14 +104,14 @@ function attachMapListeners() {
 }
 
 function neueRunde() {
-    if (lösungAngezeigt === true) {
+    if (loesungAngezeigt === true) {
         resetButtonColors();
     }
 
     zufälligesBundesland = alleBundesländer[Math.floor(Math.random() * alleBundesländer.length)];
     document.getElementById('frage').innerText = zufälligesBundesland;
 
-    if (lösungAngezeigt === true) {
+    if (loesungAngezeigt === true) {
         highlightSolution();
     }
 }
@@ -204,13 +204,13 @@ function toggleHelp() {
 }
 
 document.getElementById('btn_hilfeUmschalten').addEventListener('click', toggleHelp);
-document.getElementById('btn_lösungAnzeigenUmschalten').addEventListener('click', function() {
-    if (lösungAngezeigt === true) {
+document.getElementById('btn_loesungAnzeigenUmschalten').addEventListener('click', function() {
+    if (loesungAngezeigt === true) {
         resetButtonColors();
-        lösungAngezeigt = false;
+        loesungAngezeigt = false;
     } else {
         highlightSolution();
-        lösungAngezeigt = true;
+        loesungAngezeigt = true;
     }
 });
 

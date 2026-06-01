@@ -142,7 +142,7 @@ body {
     height: 100%;
     display: block;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /* SVG Bundesländer-Regionen */
@@ -382,7 +382,7 @@ body {
     }
 }
 
-/* #section_Knöpfe{
+/* #section_Knoepfe{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -399,7 +399,7 @@ body {
 }
 
 #btn_hilfeUmschalten,
-#btn_lösungAnzeigenUmschalten {
+#btn_loesungAnzeigenUmschalten {
     font-size: 0.95rem;
     padding: 0.9rem 1.2rem;
     margin: 0.3rem;
