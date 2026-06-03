@@ -36,6 +36,60 @@ function initGame() {
         svgDocument = karteObject.contentDocument;
         if (!svgDocument) return;
 
+        const styleElement = svgDocument.createElementNS('http://www.w3.org/2000/svg', 'style');
+        styleElement.textContent = `
+            .bundesland-region {
+                fill: transparent !important;
+                stroke: #afc9ff !important;
+                stroke-width: 1.5 !important;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                vector-effect: non-scaling-stroke;
+                touch-action: manipulation;
+                pointer-events: all !important;
+            }
+
+            .bundesland-region:hover,
+            .bundesland-region.pointer-down {
+                fill: rgba(37, 99, 235, 0.18) !important;
+            }
+
+            .touch-hit-area,
+            .touch-hit-area:hover,
+            .touch-hit-area.pointer-down,
+            .touch-hit-area.active,
+            .touch-hit-area.wrong,
+            .touch-hit-area.solution {
+                fill: transparent !important;
+                stroke: none !important;
+                outline: none !important;
+                background: none !important;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                vector-effect: non-scaling-stroke;
+                touch-action: manipulation;
+                pointer-events: all !important;
+            }
+
+            .bundesland-region.active {
+                fill: rgba(16, 185, 129, 0.35) !important;
+                stroke: rgba(16, 185, 129, 0.9) !important;
+                stroke-width: 2.5 !important;
+            }
+
+            .bundesland-region.wrong {
+                fill: rgba(239, 68, 68, 0.35) !important;
+                stroke: rgba(239, 68, 68, 0.9) !important;
+                stroke-width: 2.5 !important;
+            }
+
+            .bundesland-region.solution {
+                fill: rgba(245, 158, 11, 0.25) !important;
+                stroke: rgba(245, 158, 11, 0.9) !important;
+                stroke-width: 2.5 !important;
+            }`;
+        svgDocument.documentElement.appendChild(styleElement);
+
         prepareMapPaths();
         attachMapListeners();
         neueRunde();
@@ -70,12 +124,29 @@ function createTouchExpansions() {
         touchArea.setAttribute('cx', cx);
         touchArea.setAttribute('cy', cy);
         touchArea.setAttribute('r', radius);
-        touchArea.classList.add('bundesland-region', 'touch-hit-area');
+
+        touchArea.classList.add('touch-hit-area');
         touchArea.dataset.bundesland = state;
         touchArea.style.pointerEvents = 'all';
 
         touchArea.setAttribute('fill', 'transparent');
         touchArea.setAttribute('stroke', 'none');
+
+        touchArea.addEventListener('click', () => {
+            AnswerGiven(state);
+        });
+        touchArea.addEventListener('pointerenter', () => {
+            path.classList.add('pointer-down');
+        });
+        touchArea.addEventListener('pointerdown', () => {
+            path.classList.add('pointer-down');
+        });
+        touchArea.addEventListener('pointerleave', () => {
+            path.classList.remove('pointer-down');
+        });
+        touchArea.addEventListener('pointerup', () => {
+            path.classList.remove('pointer-down');
+        });
 
         svgDocument.documentElement.appendChild(touchArea);
     });
@@ -125,9 +196,25 @@ function AnswerGiven(Answer) {
     }
 }
 
+function MapOrder(polygon) {
+    if (!svgDocument) return;
+    svgDocument.documentElement.appendChild(polygon);
+
+    svgDocument.querySelectorAll('.touch-hit-area').forEach(circle => {
+        svgDocument.documentElement.appendChild(circle);
+    });
+
+    const aussengrenze = svgDocument.getElementById('path3789');
+    if (aussengrenze) {
+        svgDocument.documentElement.appendChild(aussengrenze);
+    }
+}
+
 function showCorrect() {
     const polygon = getStatePath(zufälligesBundesland);
     if (!polygon) return;
+
+    MapOrder(polygon);
 
     polygon.classList.add('active');
     document.body.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
@@ -142,8 +229,12 @@ function showIncorrect() {
     const polygon = getStatePath(zufälligesBundesland);
     if (!polygon) return;
 
+    MapOrder(polygon);
+
     polygon.classList.add('wrong');
-    document.body.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+    document.body.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2c26 100%)';
+
+    console.log(polygon);
 
     setTimeout(() => {
         polygon.classList.remove('wrong');
@@ -160,6 +251,9 @@ function resetButtonColors() {
 
 function highlightSolution() {
     const polygon = getStatePath(zufälligesBundesland);
+
+    MapOrder(polygon);
+
     if (polygon) {
         polygon.classList.add('solution');
     }
@@ -203,8 +297,7 @@ function toggleHelp() {
     hilfenAngezeigt = true;
 }
 
-document.getElementById('btn_hilfeUmschalten').addEventListener('click', toggleHelp);
-document.getElementById('btn_loesungAnzeigenUmschalten').addEventListener('click', function() {
+function toggleSolution() {
     if (loesungAngezeigt === true) {
         resetButtonColors();
         loesungAngezeigt = false;
@@ -212,6 +305,10 @@ document.getElementById('btn_loesungAnzeigenUmschalten').addEventListener('click
         highlightSolution();
         loesungAngezeigt = true;
     }
-});
+}
+
+
+document.getElementById('btn_hilfeUmschalten').addEventListener('click', toggleHelp);
+document.getElementById('btn_loesungAnzeigenUmschalten').addEventListener('click', toggleSolution);
 
 document.addEventListener('DOMContentLoaded', initGame);

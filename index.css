@@ -35,7 +35,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(135deg, #eef4ff 0%, #dbe9ff 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
     color: var(--text-dark);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -143,55 +143,6 @@ body {
     display: block;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
     pointer-events: auto;
-}
-
-/* SVG Bundesländer-Regionen */
-.bundesland-region {
-    fill: transparent !important;
-    stroke: #2563eb !important;
-    stroke-width: 1.5 !important;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    vector-effect: non-scaling-stroke;
-    touch-action: manipulation;
-    pointer-events: all !important;
-}
-
-.bundesland-region:hover,
-.bundesland-region.pointer-down {
-    fill: rgba(37, 99, 235, 0.18) !important;
-    stroke: rgba(37, 99, 235, 0.9) !important;
-    stroke-width: 2.5 !important;
-}
-
-.touch-hit-area {
-    fill: transparent !important;
-    stroke: none !important;
-    pointer-events: all !important;
-}
-
-.bundesland-region.active {
-    fill: rgba(16, 185, 129, 0.35) !important;
-    stroke: rgba(16, 185, 129, 0.9) !important;
-    stroke-width: 2.5 !important;
-}
-
-.bundesland-region.wrong {
-    fill: rgba(239, 68, 68, 0.35) !important;
-    stroke: rgba(239, 68, 68, 0.9) !important;
-    stroke-width: 2.5 !important;
-}
-
-.bundesland-region.solution {
-    fill: rgba(245, 158, 11, 0.25) !important;
-    stroke: rgba(245, 158, 11, 0.9) !important;
-    stroke-width: 2.5 !important;
-}
-
-.bundesland-polygon.solution {
-    fill: rgba(245, 158, 11, 0.25) !important;
-    stroke: rgba(245, 158, 11, 0.9) !important;
-    stroke-width: 2.5 !important;
 }
 
 /* Controls Footer */
