@@ -2,7 +2,7 @@
 
 # Bundesländer benennen
 
-## [im Browser öffnen →](https://schwanniii.github.io/bundeslaender-benennen/)
+## [im Browser öffnen →](https://jannis-buesing.github.io/bundeslaender-benennen/)
 
   <img src="./preview/Bundeslaender-benennen.gif" alt="Anwendungsvorschau" width="100%">
 </div>
@@ -20,6 +20,6 @@
 
 ## Feedback
 
-[Fehler melden](https://github.com/schwanniii/bundeslaender-benennen/issues) - [Feature vorschlagen](https://github.com/schwanniii/bundeslaender-benennen/issues)
+[Fehler melden](https://github.com/jannis-buesing/bundeslaender-benennen/issues) - [Feature vorschlagen](https://github.com/jannis-buesing/bundeslaender-benennen/issues)
 
 </div>
